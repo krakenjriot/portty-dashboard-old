@@ -1,10 +1,10 @@
 <?php return array (
-  'email' => 'rfvillacacan@yahoo.com',
+  'email' => 'bindavid@yahoo.com',
   'pass' => 'c4ca4238a0b923820dcc509a6f75849b',
-  'fname' => 'Rolly',
-  'lname' => 'Villacacan',
-  'server_refresh_sec' => '1',
+  'fname' => 'ben',
+  'lname' => 'david',
+  'server_refresh_sec' => '3',
   'mobile_number' => '',
-  'board_name_monitored' => '1vajBAFJhSlHOqVE',
-  'filter_pins_by_board' => '1vajBAFJhSlHOqVE',
+  'board_name_monitored' => 'MY_FIRST_BOARD',
+  'filter_pins_by_board' => 'MY_FIRST_BOARD',
 );

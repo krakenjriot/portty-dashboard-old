@@ -262,7 +262,7 @@ function create_batch_file_monitor($board_name)
 
 
 
-
+/*
 function create_batch_xloader()
 {
     include ("dbconnect.php");
@@ -286,7 +286,7 @@ function create_batch_xloader()
 	$batch_for_xloader = "
 	\n
 	c: \n
-	cd $exe_dir\xloader \n
+	cd C:\xampp\htdocs\portty-dashboard\exe\xloader \n
 	start /b xloader.exe  \n
 	";
     file_put_contents("batchfile\\xloader.bat", $batch_for_xloader);	
@@ -294,7 +294,7 @@ function create_batch_xloader()
 	
 
 } //update_url
-
+*/
 
 
 

@@ -27,7 +27,7 @@ include ("dbconnect.php");
 include ("functions.php");
 
 //update batchfile for xloader
-create_batch_xloader();
+//create_batch_xloader();
 
 //$show_modal = false;
 $online_servers = "";
