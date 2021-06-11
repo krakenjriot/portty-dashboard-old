@@ -19,6 +19,8 @@ if (isset($_GET['pins']) && $_GET['board_name'])
     $server_refresh_sec = $_GET['server_refresh_sec'];	
     $board_refresh_sec = $_GET['board_refresh_sec'];	
 	
+	
+	//echo $server_timezone;
 	//echo $server_refresh_sec."</br>";
 	
 	//$board_refresh_sec = (int) $board_refresh_sec;
@@ -70,11 +72,15 @@ if (isset($_GET['pins']) && $_GET['board_name'])
         $monitor = 0;
     }
 
+	//$tz = "Asia/Riyadh"
+	
     //echo "</br>";
     //echo "</br>";
     //echo "$config: ". var_dump($config)."</br>";
     //echo "dht hum: ". $dht_arr[1]."</br>";
     date_default_timezone_set($server_timezone);
+    //date_default_timezone_set("Asia/Riyadh");
+    //date_default_timezone_set($tz);
 
 	//file_put_contents($dht_csv_tmp); // write temp file
 	//copy($dht_file, $dht_file_tmp); // ideally on the same filesystem			
@@ -83,7 +89,7 @@ if (isset($_GET['pins']) && $_GET['board_name'])
 	
 	$dht_csv = @file_get_contents($dht_file);
 	
-    $dt = date('Y-m-d H:i:s');
+    $dt = date('Y-m-d H:i:s:q');
 
     //echo "</br>";
     //echo "</br>";

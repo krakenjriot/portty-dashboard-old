@@ -4,6 +4,9 @@ include ("session.php");
 $config = include 'config';
 $board_name_monitored = $config['board_name_monitored'];
 
+//date_default_timezone_set("Asia/Riyadh");
+
+
 // [ { plot0 : 6.18769855340767450,"scale-x": "15:4:30", } ]
 
 
@@ -49,7 +52,7 @@ if (mysqli_num_rows($result) > 0)
         $h = date("H", $time); // hour
         $m = date("i", $time); //minute
         $s = date("s", $time); //minute
-        $tm = $h . ":" . $m . ":" . $s;
+        $tm = "$h:$m:$s";
     }
 }
 

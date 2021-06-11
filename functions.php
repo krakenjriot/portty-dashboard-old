@@ -151,7 +151,7 @@ function update_list($board_name)
     //echo "server_timezone ".$server_timezone."</br>";
     //$url = "http://" . $server_ip . "/portty-dashboard/api/?board_name=$board_name&pins=$pins&exe_dir=$exe_dir&server_timezone=$server_timezone&htdocs_dir=$htdocs_dir&board_refresh_sec=$board_refresh_sec&server_refresh_sec=$server_refresh_sec";
 
-    echo "url ".$url."</br>";
+    //echo "url ".$url."</br>";
     //check if server ip is present if not insert
     //$sql = "SELECT * FROM tbl_url WHERE board_name = 'myboard1' ";
     $sql = "SELECT * FROM tbl_url WHERE board_name = '$board_name' ";
@@ -442,7 +442,7 @@ function check_monitor(){
 					//myboard1,22:05:45,29.90,22.00,0ld7vcxm72c2g3yz,Asia/Riyadh,0
 					$response_arr = str_getcsv($response);
 					//$board_name2 = $response_arr[0];
-					$dt = $response_arr[1];
+					//$dt = $response_arr[1];
 					$temp = $response_arr[2];
 					$hum = $response_arr[3];
 					$hashed = $response_arr[4];
@@ -458,8 +458,8 @@ function check_monitor(){
 					if ($monitor)
 					{
 						//$monitor_msg = 1;
-						$sql = "INSERT INTO tbl_dht (temp, hum, dt, board_name)
-																		VALUES ($temp, $hum, '$dt', '$board_name')";
+						//$sql = "INSERT INTO tbl_dht (temp, hum, dt, board_name)
+						$sql = "INSERT INTO tbl_dht (temp, hum, board_name) VALUES ($temp, $hum, '$board_name')";
 						$conn->query($sql);
 						///////////////////////////////////////////////
 						$sql = "UPDATE tbl_boards SET " . " temp = $temp, " . " hum = $hum " . " WHERE board_name = '$board_name' ";

@@ -3158,7 +3158,15 @@ echo $server_list_option;
       },		
 		
 		
-		
+"scale-x":{
+  "transform":{
+    "type":"date",
+    //"all":"%h:%i:%q %A"
+    //"all":"%d %M</br>%h:%i:%q %A"
+	//"all":"%m/%d/%Y&lt;br&gt;%H:%i:%q"
+	"all": "%m/%d/%Y %H:%i"
+  }
+},		
 		
 		
 		
@@ -3258,7 +3266,7 @@ plot: {
           transport: 'http',
           //url: 'https://us-central1-zingchart-com.cloudfunctions.net/public_http_feed?min=0&max=40&plots=1',
           url:'?p=16',
-		  interval: 400,
+		  interval: 1000,
           maxTicks: 16,
           adjustScale: false,
           resetTimeout: 100
