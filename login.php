@@ -1,5 +1,23 @@
 <?php
-	
+
+	if (file_exists('config')) {
+		//do nothing
+	} else {
+		//create new file
+		$config = include 'config';
+		$config['email'] = "";
+		$config['pass'] = "";
+		$config['fname'] = "";
+		$config['lname'] = "";
+		$config['server_refresh_sec'] = "3";
+		$config['mobile_number'] = "";
+		$config['board_name_monitored'] = "";
+		$config['filter_pins_by_board'] = "";
+		file_put_contents('config', '<?php return ' . var_export($config, true) . ';');	
+		//header("location: ?p=1");
+		//exit();			
+	}	
+
 	$config = include 'config';
 	$email = $config['email'];
 	$pass = $config['pass'];
@@ -24,7 +42,6 @@
 		
 		//$email_post = $_POST['email'];
 		$pass_post = $_POST['pass'];
-		
 		
 		if( $pass_post == ""){
 			header("location: ?p=1&msg=login-failed-empty-data");

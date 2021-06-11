@@ -5,6 +5,6 @@
   'lname' => '',
   'server_refresh_sec' => '3',
   'mobile_number' => '',
-  'board_name_monitored' => '1vajBAFJhSlHOqVE',
+  'board_name_monitored' => '',
   'filter_pins_by_board' => '',
 );

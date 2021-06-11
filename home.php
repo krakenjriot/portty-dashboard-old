@@ -1,5 +1,27 @@
 
 <?php
+
+
+	if (file_exists('config')) {
+		//do nothing
+	} else {
+		//create new file	
+		header("location: ?p=1");
+		exit();			
+	}	
+
+
+
+
+
+
+
+
+
+
+
+
+
 include ("session.php");
 include ("dbconnect.php");
 include ("functions.php");
@@ -3160,11 +3182,11 @@ echo $server_list_option;
 		
 "scale-x":{
   "transform":{
-    "type":"date",
+    "type":"date"
     //"all":"%h:%i:%q %A"
     //"all":"%d %M</br>%h:%i:%q %A"
 	//"all":"%m/%d/%Y&lt;br&gt;%H:%i:%q"
-	"all": "%m/%d/%Y %H:%i"
+	//"all": "%m/%d/%Y %H:%i"
   }
 },		
 		
