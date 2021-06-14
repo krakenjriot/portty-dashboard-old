@@ -1658,7 +1658,7 @@ echo "
                         <th>htdocs_dir</th>
                         <th>exe_dir</th>
 						<th>refresh_sec</th>
-                        <th>local</th> 
+                       
                       </tr>
                     </thead>
                     <tfoot>
@@ -1676,7 +1676,7 @@ echo "
                         <th>htdocs_dir</th>
                         <th>exe_dir</th>
 						<th>refresh_sec</th>
-                        <th>local</th>                        
+                                           
                         
                       </tr>
                     </tfoot>
@@ -1767,7 +1767,13 @@ if (mysqli_num_rows($result) > 0)
                         data-active='" . $row["active"] . "'
                         ><i class='far fa-edit fa-2x'></i></i></a></td>" .
 
-        "<td>$active</td>" . "<td>$web_service</td>" . "<td>$web_page</td>" . "<td>" . $row["server_name"] . "</td>" . "<td>" . $row["server_desc"] . "</td>" . "<td>" . $row["server_ip"] . "</td>" . "<td>" . $row["server_location"] . "</td>" . "<td>" . $row["server_timezone"] . "</td>" . "<td>" . $row["htdocs_dir"] . "</td>" . "<td>" . $row["exe_dir"] . "</td>" . "<td>" . $row["refresh_sec"] . "</td>" . "<td>$_default</td>" .
+        "<td>$active</td>" . "<td>$web_service</td>" . "<td>$web_page</td>" . "<td>" . $row["server_name"] . "</td>" . 
+		"<td>" . $row["server_desc"] . "</td>" . "<td>" . $row["server_ip"] . "</td>" . 
+		"<td>" . $row["server_location"] . "</td>" . "<td>" . $row["server_timezone"] . "</td>" . 
+		"<td>" . $row["htdocs_dir"] . "</td>" . 
+		"<td>" . $row["exe_dir"] . "</td>" . 
+		"<td>" . $row["refresh_sec"] . "</td>" . 
+		//"<td>$_default</td>" .
 
         //"<a href='#' class='btn btn-primary btn-icon-split' data-toggle='modal' data-target='#addServer' data-id='@getbootstrap' ><i class='fas fa-trash'></i></button></td>".
         //"<td><a href='javascript:;' data-toggle='modal' data-target='#deleteServerModal' data-mykey='123456' class='btn btn-danger btn-circle btn-sm'><i class='fas fa-trash'></i></td>" .
