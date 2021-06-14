@@ -303,7 +303,17 @@ function create_batch_xloader()
 
 
 
-
+function secondsToTimeInterval($seconds) {
+    $t = round($seconds);
+    $days = floor($t/86400);
+    $day_sec = $days*86400;
+    $hours = floor( ($t-$day_sec) / (60 * 60) );
+    $hour_sec = $hours*3600;
+    $minutes = floor((($t-$day_sec)-$hour_sec)/60);
+    $min_sec = $minutes*60;
+    $sec = (($t-$day_sec)-$hour_sec)-$min_sec;
+    return sprintf('%02d:%02d:%02d:%02d', $days, $hours, $minutes, $sec);
+}
 
 
 

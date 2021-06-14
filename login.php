@@ -57,7 +57,23 @@
 		} 		
 		else if(md5($pass_post) == $pass) {
 			session_start(); //start the PHP_session function 			
-			$_SESSION['id'] = md5(time());			
+			$_SESSION['id'] = md5(time());	
+
+
+		
+			$s_file = "start.ts";
+			if (!file_exists($s_file))
+			{				
+				file_put_contents($s_file, strtotime('now'));
+			} 
+		
+			$c_file = "current.ts";
+			if (!file_exists($c_file))
+			{				
+				file_put_contents($c_file, strtotime('now'));
+			}
+
+			
 			header("location: ?p=4&msg=login-success&");
 			exit();
 		}

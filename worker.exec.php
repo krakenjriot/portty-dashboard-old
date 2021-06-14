@@ -70,8 +70,39 @@ else
     //echo "</pre>";
 }
 
-echo "timestamp: " . date('Y-m-d H:i:s') . "</br>";
+
+
+			$s_file = "start.ts";
+			if (file_exists($s_file))
+			{				
+				$start = file_get_contents($s_file);
+			} 
+		
+			$c_file = "current.ts";
+			if (file_exists($c_file))
+			{				
+				$end = file_get_contents($c_file);
+			}
+			
+			
+			//$uptime_sec = $end - $start;
+			//$c_file = "current.ts";
+			if (file_exists($c_file))
+			{				
+				file_put_contents($c_file, strtotime('now'));
+			}			
+			
+
+
+echo "current date/time: " . date('Y-m-d H:i:s') . "</br>";
+
+//secondsToTimeInterval(intval($end - $start));
+
+
+echo "uptime: " . secondsToTimeInterval(intval($end - $start)) . "</br>";
 //echo "timestamp: " . date('Y-m-d H:i:s') . "</br>";
+
+
 
 
 //DISPLAY STATUS SERVERS

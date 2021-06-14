@@ -985,7 +985,19 @@ if (isset($_POST['submit_board']))
       display: none;
     }
   </style>
-	
+
+<script>//device initial update
+/*
+$(document).ready(function() {
+     var refresh = function () {
+	//uptime.php p4	 
+	$('#uptime').load('?p=4&s=<?php echo $session_id; ?>&ty=<?php echo $type; ?>');
+     }
+     setInterval(refresh, 1000);
+     refresh();
+});
+*/
+</script>	
 	
   </head>
   <body id="page-top">
@@ -999,7 +1011,19 @@ if (isset($_POST['submit_board']))
           <!--<div class="sidebar-brand-icon">            
 			<i class="far fa-user-alien"></i>
           </div>-->
-          <div class="sidebar-brand-text mx-3">PORTTY Command Center</div>
+		  
+<?php 
+
+
+
+?>		  
+		  
+          <div class="sidebar-brand-text mx-3">PORTTY Command Center
+		  <!--</br>
+		  
+		  <div id="uptime" style="font-size: 12px">Loading...</div>-->
+		  </div>
+          
         </a>
 		</br>
         <!-- Divider -->
