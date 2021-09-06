@@ -1,8 +1,20 @@
 <?php
-include ("session.php");
+   include ("session.php");
+   include ("dbconnect.php");
+   include ("functions.php");
 //$board_name = "myboard1";
-$config = include 'config';
-$board_name_monitored = $config['board_name_monitored'];
+         $sql = "SELECT filtered_dht FROM tbl_settings ";
+         $result = mysqli_query($conn, $sql);         
+         $board_name_monitored = "";
+         if (mysqli_num_rows($result) > 0)
+         {
+             // output data of each row
+             while ($row = mysqli_fetch_assoc($result))
+             {
+                 $board_name_monitored = $row['filtered_dht'];
+             }
+         }	
+
 
 //date_default_timezone_set("Asia/Riyadh");
 
@@ -10,8 +22,7 @@ $board_name_monitored = $config['board_name_monitored'];
 // [ { plot0 : 6.18769855340767450,"scale-x": "15:4:30", } ]
 
 
-include ("dbconnect.php");
-include ("functions.php");
+
 
 /*
 	if($board_name_monitored == "Select All"){
