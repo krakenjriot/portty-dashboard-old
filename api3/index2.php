@@ -12,7 +12,6 @@
 
 	//https://www.datacamp.com/community/tutorials/making-http-requests-in-python
 
-
 	////////////////////////////////////////////////
 	
 	if(isset($_POST['dht']))
@@ -25,9 +24,18 @@
 		foreach ($dht_arr as $value) 
 		{
 			$dht_arr_arr = explode(",", $value);
-			$bn = $dht_arr_arr[0];
-			$temp = $dht_arr_arr[1];
-			$hum = $dht_arr_arr[2];
+			
+			if(count($dht_arr_arr) == 3) {
+				$bn = $dht_arr_arr[0];
+				$temp = $dht_arr_arr[1];
+				$hum = $dht_arr_arr[2];				
+			} else {
+				$bn = "sample";
+				$temp = 0;
+				$hum = 0;				
+			}
+			
+
 			
 			$sql = "INSERT INTO tbl_dht (board_name, temp, hum)
 			VALUES ('$bn', $temp, $hum )";
