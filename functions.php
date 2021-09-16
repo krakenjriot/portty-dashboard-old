@@ -66,7 +66,32 @@ function getUserIP()
 
 
 
+function update_pins($board_name)
+{
 
+    $pins = "";
+
+    include ("dbconnect.php");
+    //get pins
+    $sql = "SELECT * FROM tbl_pins WHERE board_name = '$board_name' ORDER BY pin_num ASC";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0)
+    {
+        // output data of each row
+        while ($row = mysqli_fetch_assoc($result))
+        {
+            $pins .= $row['active'];
+        }
+    }	
+	
+        $sql = "UPDATE tbl_boards SET " . 		 
+		" pins = '$pins' " . 
+		" WHERE board_name = '$board_name' ";
+
+        if ($conn->query($sql) === true){}
+        	
+}//
 
 
 
@@ -103,6 +128,12 @@ function update_list($board_name)
             $pins .= $row['active'];
         }
     }
+	
+	
+	
+	
+	
+	
 
     //echo "pins ".$pins."</br>";
     //get server name
@@ -490,8 +521,7 @@ function check_monitor(){
 				}
 				
 				//echo "response ".$response."</br>";
-				
-				
+			
 			}
 		}
 	} //if
